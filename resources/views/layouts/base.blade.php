@@ -389,8 +389,10 @@
         <li class="active">Blank page</li>
       </ol>
     </section>
+{{-- 
 
     <!-- Main content -->
+    
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
@@ -421,6 +423,7 @@
                       <th>Action</th>
 
                     </tr>
+
                     @foreach($tasks as $task)
                       <tr>
                         <td>{{$task->id}}</td>
@@ -428,46 +431,47 @@
                         <td>{{$task->description}}</td>
                         <td>{{$task->status}}</td>
                         <td>{{$task->user_id}}</td>
+                        <td>{{$task->assign}}</td>         
+                        <td><a class="btn btn-default" href="/tasks/{{$task->id}}/edit" >Edit</a>
+                    
+                          {!! Form::open(['action'=>['TaskController@destroy',$task->id],'method'=>'POST' ]) !!}
+                          {{ Form::hidden('_method','DELETE') }}
+                          {{ Form::submit('Delete',['class'=>'btn btn-danger']) }}
+                          {!! Form::close() !!}
+                        </td>
+                      
                         
                       </tr>
                     @endforeach
-
-                  
-
-                
-                      {{-- <td><span class="label label-success">Approved</span></td> --}}
+                    
                       
                   </table>
+
+                  
                 </div>
                 <!-- /.box-body -->
+                
               </div>
               <!-- /.box -->
+            <a class="btn btn-warning" href="/views/create" >Add task</a>
+               
+               
+              
+             
+
+              
             </div>
-          </div>
+            
+        </div>
+      
+    </div>
+</div>
+ --}}
 
-      {{-- <!-- Default box -->
-      <div class="box">
-        <div class="box-header with-border">
-          <h3 class="box-title">Title</h3>
-
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                    title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
           </div>
-        </div>
-        <div class="box-body">
-          Start creating your amazing application!
-        </div>
-        <!-- /.box-body -->
-        <div class="box-footer">
-          Footer
-        </div>
-        <!-- /.box-footer-->
-      </div>
-      <!-- /.box --> --}}
+          
+
+     
 
     </section>
     <!-- /.content -->
