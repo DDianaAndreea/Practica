@@ -44,8 +44,8 @@
                         <td><a class="btn btn-default" href="/tasks/{{$task->id}}/edit" >Edit</a>
                     
                           {!! Form::open(['action'=>['TaskController@destroy',$task->id],'method'=>'POST' ]) !!}
-                          {{ Form::hidden('_method','DELETE') }}
-                          {{ Form::submit('Delete',['class'=>'btn btn-danger']) }}
+                          {!! Form::hidden('_method','DELETE') !!}
+                          {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
                           {!! Form::close() !!}
                         </td>
                       
@@ -63,7 +63,7 @@
                 
               </div>
               <!-- /.box -->
-            <a class="btn btn-warning" href="/task/create" >Add task</a>
+            <a class="btn btn-warning" href="../task/create" >Add task</a>
                
                
               
